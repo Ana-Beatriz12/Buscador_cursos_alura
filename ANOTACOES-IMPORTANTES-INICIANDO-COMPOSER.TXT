@@ -1,0 +1,71 @@
+PARA ENTRAR NA PASTA CRAIADA DO BUSCADOR DE CURSOS BASTA DIGITAR ISSO:
+
+ cd buscador-cursos-alura
+
+DEPOIS ESCREVA:
+php -v
+
+E DEPOIS ESCREVA:
+Composer -v
+
+COMEÇANDO O PROJETO!
+
+NO TERMINAL DO VSCODE ESCREVA:
+
+composer init
+
+DEPOIS ESCREVER O NICK NAME DO SEU GIT HUB, E O NOME DO SEU PROJETO:
+
+ana-beatriz12/buscador-cursos
+
+QUANDO PERGUNTAR ISSO:
+Author [n to skip]: 
+COLOCAR N PARA PULAR:
+n
+
+APERTAR ENTER PARA PULAR:
+Minimum Stability []: 
+
+COLOCAR :  library
+Package Type (e.g. library, project, metapackage, composer-plugin) []: 
+
+DAR ENTER PARA PULAR:
+License []: 
+
+DAR ENTER PARA PULAR:
+Would you like to define your dependencies (require) interactively [yes]? 
+
+DAR ENTER PARA PULAR:
+Search for a package: 
+
+ESCREVER NO:
+Would you like to define your dev dependencies (require-dev) interactively [yes]? 
+
+ESCREVER N PARA PULAR:
+Add PSR-4 autoload mapping? Maps namespace "AnaBeatriz12\BuscadorCursos" to the entered relative path. [src/, n to skip]: 
+
+DAR ENTER PARA GERAR O ARQUIVO:
+Do you confirm generation [yes]?
+
+
+
+
+
+2 -BUSCANDO PACOTES:
+
+IR NO SITE PACKAGIST:
+https://packagist.org
+
+E PESQUISAR HTTP CLIENT, VAI APARECER UM SITE COM ESSE CODIGO PARA COLOCAR NO TERMINAL DO VSCODE PARA INTALAR O GUZZLE:
+composer require guzzlehttp/guzzle 
+
+E PESQUISAR DOWNCROWLER:
+composer require symfony/dom-crawler
+
+NO TERMINAL COLOCAR ESSAS 2 LINHAS DE CODIGO:
+1 - 
+composer require guzzlehttp/guzzle 
+E APERTAR ENTER PARA INSTALAR E DEPOIS COLOCAR ESSA LINHA DE CODIGO E APERTAR ENTER PARA INSTALAR TAMBEM:
+composer require symfony/dom-crawler
+
+
