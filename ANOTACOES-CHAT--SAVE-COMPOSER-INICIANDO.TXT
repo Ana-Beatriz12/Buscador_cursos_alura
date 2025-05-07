@@ -1,0 +1,99 @@
+eu fiz tudo isso ontem e deu certo, mas quando fui ver o curso hoje econinuar, nao tinha nada do que eu tnha feito, nem o php e nem o composer ele reconhece se coloco no terminal do vscode ele dá esse erro:
+
+PS C:\Users\Ana Beatriz> php -v     
+php : O termo 'php' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa operável. Verifique a grafia do nome ou, se 
+um caminho tiver sido incluído, veja se o caminho está correto e tente novamente.
+No linha:1 caractere:1
++ php -v
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (php:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+sendo que eu abaixei e configurei tudo ontem, mas ele nao salvou nadaa, consegui fazer até o arquivo json, como posso salvar os arquivos e as linhas de comando no terminal do vs code? porque vai ser complicado se todo dia que eu tiver que estudar eu começar tudo do zero
+
+
+O ChatGPT disse:
+O erro que você está enfrentando:
+
+vbnet
+Copiar
+Editar
+php : O termo 'php' não é reconhecido como nome de cmdlet...
+significa que o PHP não está mais no PATH do sistema, então o terminal do VS Code não consegue encontrar o executável do PHP.
+
+Além disso, o fato de nada do que você fez ontem ter sido salvo pode estar relacionado a:
+
+Você não ter salvo os arquivos (atalho: Ctrl+S);
+
+Ter trabalhado em uma pasta temporária (como dentro de .zip ou em área de cache);
+
+VS Code ter fechado sem salvar automático (o que só acontece com arquivos não salvos ou criados sem ser dentro de uma pasta);
+
+Ter fechado o terminal sem ter instalado o PHP globalmente ou corretamente configurado no PATH.
+
+✅ Para resolver:
+1. Salvar corretamente os arquivos no VS Code
+Sempre abra uma pasta fixa no seu PC antes de começar:
+
+Vá em File > Open Folder... ou Arquivo > Abrir Pasta...
+
+Crie uma pasta tipo: C:\MeusProjetos\php_teste
+
+Trabalhe apenas dentro dessa pasta
+
+Salve os arquivos com Ctrl+S sempre
+
+Assim, os arquivos ficam no seu disco e não são descartados ao fechar o VS Code.
+
+2. Adicionar o PHP ao PATH do Windows
+Se você instalou o PHP manualmente (via .zip):
+
+Vá na pasta onde você extraiu o PHP, tipo:
+C:\php ou C:\Program Files\php
+
+Copie esse caminho.
+
+Vá em:
+
+Iniciar > Digite "variáveis de ambiente"
+
+Clique em "Variáveis de ambiente"
+
+Na parte de "Variáveis do sistema", ache a variável chamada Path
+
+Clique em Editar, depois Novo, e cole o caminho da pasta do PHP
+
+Clique em OK até fechar tudo.
+
+Feche e reabra o VS Code e o terminal.
+
+Teste com:
+
+bash
+Copiar
+Editar
+php -v
+3. Composer também precisa estar no PATH
+Se você usou o instalador do Composer (Composer-Setup.exe), ele deveria ter feito isso automaticamente. Caso não:
+
+Vá onde está instalado o Composer (C:\ProgramData\ComposerSetup\bin ou semelhante)
+
+Adicione esse caminho ao PATH da mesma forma que fez com o PHP
+
+4. Testar se está tudo OK
+No terminal do VS Code:
+
+bash
+Copiar
+Editar
+php -v         # deve mostrar a versão do PHP
+composer -v    # deve mostrar a versão do Composer
+📝 Dica para não perder seu trabalho:
+Trabalhe sempre em uma pasta fixa no seu disco
+
+Evite criar arquivos soltos (sem pasta)
+
+Use Ctrl+S com frequência
+
+Use o Git se quiser salvar versões do seu código
+
