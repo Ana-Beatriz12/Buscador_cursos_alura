@@ -3,9 +3,9 @@
 
 require 'vendor/autoload.php';
 
+
 use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
-
 use Symfony\Component\DomCrawler\Crawler;
 
 $client = new Client();
@@ -21,14 +21,15 @@ $crawler->addHtmlContent($html);
 $cursos = $crawler->filter('li.subcategoria__item');
 
 foreach ($cursos as $curso) {
-    echo $curso->textContent . PHP_EOL;
+    echo exibeMensagem($curso);
+
 }
 
 // PARA VER OS NOMES DOS CURSOS, É SO RODAR O COMANDO NO TERMINAL DO VSCODE
 //php buscar-cursos.php
 // COM ISSO ELE VAI LISTAR TODOS OS CURSOS QUEE STAO NO SITE DA ALURA UHUU FUNCIONAA.
 
-//parei na video aula:
+//parei na video aula:j
 // 03 - ENTENDENDO AUTOLOAD, VIDEO 6
 //1:25
 ?>

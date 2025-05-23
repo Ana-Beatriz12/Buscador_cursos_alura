@@ -8,8 +8,10 @@
         "symfony/css-selector": "^6.0"
     },
     "autoload": {
+        "files": ["./functions.php"],
         "psr-4": {
             "Alura\\BuscadorDeCursos\\": "src/"
         }
-    }
+    },
+    "version": "1.0.0"
 }
