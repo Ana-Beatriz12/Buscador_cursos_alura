@@ -1,9 +1,14 @@
 <?php
 class Teste{
-    public static function teste(){
-        echo "teste";
+    public static function metodo(){
+        echo "Teste";
     }
 }
 
+class Teste2{
+    public static function metodo(){
+        echo "Teste 2";
+    }
+}
 
 ?>
