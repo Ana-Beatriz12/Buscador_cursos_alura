@@ -2,7 +2,7 @@
 
 
 require 'vendor/autoload.php';
-
+require 'functions.php';
 
 use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
@@ -18,11 +18,12 @@ $crawler = new Crawler();
 
 $crawler->addHtmlContent($html);
 
-$cursos = $crawler->filter('li.subcategoria__item');
+$cursos = $crawler->filter('li.subcategoria__item')->each(function (Crawler $node) {
+    return $node->text();
+});
 
 foreach ($cursos as $curso) {
     echo exibeMensagem($curso);
-
 }
 
 // PARA VER OS NOMES DOS CURSOS, É SO RODAR O COMANDO NO TERMINAL DO VSCODE
@@ -30,8 +31,8 @@ foreach ($cursos as $curso) {
 // COM ISSO ELE VAI LISTAR TODOS OS CURSOS QUEE STAO NO SITE DA ALURA UHUU FUNCIONAA.
 
 //parei na video aula:j
-// 03 - ENTENDENDO AUTOLOAD, VIDEO 6
-//1:25
+// 04- FERRAMENTAS DE QUALIDADE DE CODIGO, VIDEO 8
+//
 ?>
 
 
