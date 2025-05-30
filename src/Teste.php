@@ -1,14 +1,17 @@
 <?php
-class Teste{
+
+namespace Alura\BuscadorDeCursos;
+class Teste
+{
     public static function metodo(){
         echo "Teste";
     }
 }
 
-class Teste2{
+class Teste2
+{
     public static function metodo(){
         echo "Teste 2";
     }
 }
 
-?>
