@@ -1,6 +1,5 @@
 <?php
 
-
 require 'vendor/autoload.php';
 require 'functions.php';
 
@@ -10,7 +9,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 $client = new Client();
 
-$resposta= $client->request("GET","https://www.alura.com.br/cursos-online-programacao/php");
+$resposta = $client->request("GET", "https://www.alura.com.br/cursos-online-programacao/php");
 
 $html = $resposta->getBody();
 
@@ -33,7 +32,3 @@ foreach ($cursos as $curso) {
 //parei na video aula:j
 // 04- FERRAMENTAS DE QUALIDADE DE CODIGO, VIDEO 8
 //
-?>
-
-
-

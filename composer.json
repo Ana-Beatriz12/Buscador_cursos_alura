@@ -1,6 +1,6 @@
 {
     "name": "ana-beatriz12/buscador-cursos",
-    "description": "Projeti que busca os cursos no site da alura",
+    "description": "Projeto que busca os cursos no site da alura",
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^7.9",
@@ -8,7 +8,7 @@
         "symfony/css-selector": "^6.0"
     },
     "autoload": {
-        "files": ["./functions.php"],
+        "files": ["src/functions.php"],
         "psr-4": {
             "Alura\\BuscadorDeCursos\\": "src/"
         }
