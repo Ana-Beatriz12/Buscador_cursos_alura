@@ -29,6 +29,7 @@ foreach ($cursos as $curso) {
 //php buscar-cursos.php
 // COM ISSO ELE VAI LISTAR TODOS OS CURSOS QUEE STAO NO SITE DA ALURA UHUU FUNCIONAA.
 
-//parei na video aula:j
+//parei na video aula:
 // 04- FERRAMENTAS DE QUALIDADE DE CODIGO, VIDEO 8
+//5:18
 //
