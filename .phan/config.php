@@ -7,13 +7,7 @@ return [
     'directory_list' => [
         'src',
         'vendor/symfony/dom-crawler',
-        'vendor/guzzlehttp/guzzle',
-        'vendor/psr/http-message',
-        'vendor_dir' => __DIR__ . '/../vendor',
-        'file_list' => [
-            __DIR__ . '/../vendor/phpstan/phpstorm-stubs/psr/psr-http-message.stub.php',
-        ],
-
+        'vendor/guzzlehttp/guzzle'
     ],
 
     "exclude_analysis_directory_list" => [

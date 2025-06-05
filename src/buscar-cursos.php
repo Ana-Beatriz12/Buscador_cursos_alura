@@ -22,7 +22,7 @@ $cursos = $crawler->filter('li.subcategoria__item')->each(function (Crawler $nod
 });
 
 foreach ($cursos as $curso) {
-    echo exibeMensagem($curso);
+    exibeMensagem($curso);
 }
 
 // PARA VER OS NOMES DOS CURSOS, É SO RODAR O COMANDO NO TERMINAL DO VSCODE
@@ -30,6 +30,6 @@ foreach ($cursos as $curso) {
 // COM ISSO ELE VAI LISTAR TODOS OS CURSOS QUEE STAO NO SITE DA ALURA UHUU FUNCIONAA.
 
 //parei na video aula:
-// 04- FERRAMENTAS DE QUALIDADE DE CODIGO, VIDEO 8
-//5:18
+// 05- AUTOMATIZANDO PROCESSOS COM SCRIPTS, VIDEO 3
+//0:0
 //
