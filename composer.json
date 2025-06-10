@@ -5,7 +5,8 @@
     "require": {
         "guzzlehttp/guzzle": "^7.9",
        "symfony/dom-crawler":"^6.0",
-        "symfony/css-selector": "^6.0"
+        "symfony/css-selector": "^6.0",
+        "psr/http-message": "^2.0"
     },
     "autoload": {
         "files": ["src/functions.php"],
@@ -21,6 +22,11 @@
     "scripts":{
         "test": "phpunit tests\\TestBuscadorDeCursos.php",
         "cs": "phpcs --standard=PSR12 src/",
-        "phan": "phan --allow-polyfill-parser"
+        "phan": "phan --allow-polyfill-parser", 
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ]
     }
 }
