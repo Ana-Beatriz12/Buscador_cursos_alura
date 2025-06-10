@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9736493229b72b9b0d7f1bd1d808ce16",
+    "content-hash": "7b86b91e124e486a1644c93c78e7ed19",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1449,16 +1449,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.4.0",
+            "version": "v5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494"
+                "reference": "ae59794362fe85e051a58ad36b289443f57be7a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/447a020a1f875a434d62f2a401f53b82a396e494",
-                "reference": "447a020a1f875a434d62f2a401f53b82a396e494",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ae59794362fe85e051a58ad36b289443f57be7a9",
+                "reference": "ae59794362fe85e051a58ad36b289443f57be7a9",
                 "shasum": ""
             },
             "require": {
@@ -1501,22 +1501,22 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.4.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.5.0"
             },
-            "time": "2024-12-30T11:07:19+00:00"
+            "time": "2025-05-31T08:24:38+00:00"
         },
         {
             "name": "phan/phan",
-            "version": "5.4.5",
+            "version": "5.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phan/phan.git",
-                "reference": "2b15302175931a0629a85c57d0c1f91d68b26a4d"
+                "reference": "5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phan/phan/zipball/2b15302175931a0629a85c57d0c1f91d68b26a4d",
-                "reference": "2b15302175931a0629a85c57d0c1f91d68b26a4d",
+                "url": "https://api.github.com/repos/phan/phan/zipball/5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79",
+                "reference": "5963ad2e55f7c4b3fd8349d25ddd7b43414d2d79",
                 "shasum": ""
             },
             "require": {
@@ -1527,7 +1527,7 @@
                 "ext-tokenizer": "*",
                 "felixfbecker/advanced-json-rpc": "^3.0.4",
                 "microsoft/tolerant-php-parser": "0.1.2",
-                "netresearch/jsonmapper": "^1.6.0|^2.0|^3.0|^4.0",
+                "netresearch/jsonmapper": "^1.6.0|^2.0|^3.0|^4.0|^5.0",
                 "php": "^7.2.0|^8.0.0",
                 "sabre/event": "^5.1.3",
                 "symfony/console": "^3.2|^4.0|^5.0|^6.0|^7.0",
@@ -1581,9 +1581,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phan/phan/issues",
-                "source": "https://github.com/phan/phan/tree/5.4.5"
+                "source": "https://github.com/phan/phan/tree/5.4.6"
             },
-            "time": "2024-08-13T21:41:35+00:00"
+            "time": "2025-06-09T13:26:52+00:00"
         },
         {
             "name": "phar-io/manifest",

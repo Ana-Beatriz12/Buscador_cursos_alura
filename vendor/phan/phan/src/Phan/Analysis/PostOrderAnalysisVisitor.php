@@ -3171,9 +3171,6 @@ class PostOrderAnalysisVisitor extends AnalysisVisitor
             return;
         }
         $minimum_target_php_version_id = Config::get_closest_minimum_target_php_version_id();
-        if ($minimum_target_php_version_id >= 80200) {
-            return;
-        }
 
         if ($type->kind === ast\AST_TYPE_INTERSECTION) {
             if ($minimum_target_php_version_id < 80100) {
@@ -3234,17 +3231,21 @@ class PostOrderAnalysisVisitor extends AnalysisVisitor
                 );
             }
         } elseif ($inner_type->flags === ast\flags\TYPE_TRUE) {
-            $this->emitIssue(
-                Issue::CompatibleTrueType,
-                $inner_type->lineno,
-                'true'
-            );
+            if ($minimum_target_php_version_id < 80200) {
+                $this->emitIssue(
+                    Issue::CompatibleTrueType,
+                    $inner_type->lineno,
+                    'true'
+                );
+            }
         } elseif (!$is_union && \in_array($inner_type->flags, [ast\flags\TYPE_NULL, ast\flags\TYPE_FALSE], true)) {
-            $this->emitIssue(
-                Issue::CompatibleStandaloneType,
-                $inner_type->lineno,
-                ASTReverter::toShortTypeString($type)
-            );
+            if ($minimum_target_php_version_id < 80200) {
+                $this->emitIssue(
+                    Issue::CompatibleStandaloneType,
+                    $inner_type->lineno,
+                    ASTReverter::toShortTypeString( $type )
+                );
+            }
         }
     }
 

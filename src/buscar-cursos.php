@@ -3,7 +3,7 @@
 require 'vendor/autoload.php';
 require 'functions.php';
 
-use Alura\BuscadorDeCursos\Buscador;
+// use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -30,6 +30,6 @@ foreach ($cursos as $curso) {
 // COM ISSO ELE VAI LISTAR TODOS OS CURSOS QUEE STAO NO SITE DA ALURA UHUU FUNCIONAA.
 
 //parei na video aula:
-// 05- AUTOMATIZANDO PROCESSOS COM SCRIPTS, VIDEO 3
+// 05- AUTOMATIZANDO PROCESSOS COM SCRIPTS, VIDEO 4
 //0:0
 //

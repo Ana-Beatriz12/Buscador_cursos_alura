@@ -84,7 +84,7 @@ class CLI
     /**
      * This should be updated to x.y.z-dev after every release, and x.y.z before a release.
      */
-    public const PHAN_VERSION = '5.4.5';
+    public const PHAN_VERSION = '5.4.6';
 
     /**
      * List of short flags passed to getopt
@@ -690,9 +690,15 @@ class CLI
                     }
                     break;
                 case 'target-php-version':
+                    if (\strtolower($value) === 'native') {
+                        $value = null;
+                    }
                     Config::setValue('target_php_version', $value);
                     break;
                 case 'minimum-target-php-version':
+                    if (\strtolower($value) === 'native') {
+                        $value = null;
+                    }
                     Config::setValue('minimum_target_php_version', $value);
                     break;
                 case 'd':
@@ -1553,13 +1559,13 @@ $init_help
  -b, --backward-compatibility-checks
   Check for potential PHP 5 -> PHP 7 BC issues
 
- --target-php-version {5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1,native}
+ --target-php-version {5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,native}
   The PHP version that the codebase will be checked for compatibility against.
   For best results, the PHP binary used to run Phan should have the same PHP version.
   (Phan relies on Reflection for some param counts
    and checks for undefined classes/methods/functions)
 
- --minimum-target-php-version {5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1,native}
+ --minimum-target-php-version {5.6,7.0,7.1,7.2,7.3,7.4,8.0,8.1,8.2,8.3,8.4,native}
   The PHP version that will be used for feature/syntax compatibility warnings.
 
  -i, --ignore-undeclared
@@ -2829,9 +2835,8 @@ EOB
      */
     public function restartWithoutProblematicExtensions(): void
     {
-        $extensions_to_disable = [];
-        if (self::shouldRestartToExclude('xdebug')) {
-            $extensions_to_disable[] = 'xdebug';
+        $extensions_to_disable = self::extensionsToDisable();
+        if (in_array('xdebug', $extensions_to_disable, true)) {
             // Restart if Xdebug is loaded, unless the environment variable PHAN_ALLOW_XDEBUG is set.
             if (!getenv('PHAN_DISABLE_XDEBUG_WARN')) {
                 fwrite(STDERR, <<<EOT
@@ -2844,11 +2849,10 @@ EOT
                 );
             }
         }
-        if (self::shouldRestartToExclude('uopz')) {
+        if (in_array('uopz', $extensions_to_disable, true)) {
             // NOTE: uopz seems to cause instability when used and switched from enabled to disabled.
             //
             // TODO create and link to stubs if https://github.com/krakjoe/uopz/issues/123 is completed.
-            $extensions_to_disable[] = 'uopz';
             fwrite(
                 STDERR,
                 <<<EOT
@@ -2859,9 +2863,8 @@ EOT
 EOT
             );
         }
-        if (self::shouldRestartToExclude('grpc') && self::willUseMultipleProcesses()) {
+        if (in_array('grpc', $extensions_to_disable, true)) {
             // This still hangs when phan runs with --processes 2, even in 1.22.0
-            $extensions_to_disable[] = 'grpc';
             fwrite(
                 STDERR,
                 "[info] grpc can cause php to hang when Phan is run with options that require forking." . PHP_EOL .
@@ -2881,6 +2884,27 @@ EOT
             // Automatically restart if problematic extensions are loaded
             $ini_handler->check();
         }
+    }
+
+    /**
+     * @return string[] List of PHP extensions to disable
+     */
+    public static function extensionsToDisable(): array
+    {
+        $extensions_to_disable = [];
+        if (self::shouldRestartToExclude('xdebug')) {
+            $extensions_to_disable[] = 'xdebug';
+        }
+
+        if (self::shouldRestartToExclude('uopz')) {
+            $extensions_to_disable[] = 'uopz';
+        }
+
+        if (self::shouldRestartToExclude('grpc') && self::willUseMultipleProcesses()) {
+            $extensions_to_disable[] = 'grpc';
+        }
+
+        return $extensions_to_disable;
     }
 
     private static function shouldRestartToExclude(string $extension): bool
