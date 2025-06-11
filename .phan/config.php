@@ -6,6 +6,7 @@ return [
 
     'directory_list' => [
         'src',
+        'vendor/psr/http-message/src', 
         'vendor/symfony/dom-crawler',
         'vendor/guzzlehttp/guzzle'
     ],
@@ -13,6 +14,8 @@ return [
     "exclude_analysis_directory_list" => [
         'vendor/'
     ],
+
+    'autoload_file' => __DIR__ . '/vendor/autoload.php',
 
     'plugins' => [
         'AlwaysReturnPlugin',
