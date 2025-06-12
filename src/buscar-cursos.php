@@ -34,6 +34,6 @@ foreach ($cursos as $curso) {
 // COM ISSO ELE VAI LISTAR TODOS OS CURSOS QUEE STAO NO SITE DA ALURA UHUU FUNCIONAA.
 
 //parei na video aula:
-// 06- PUBLICANDO UM PACOTE!, VIDEO 1
-//0:0
+// 06- PUBLICANDO UM PACOTE!, VIDEO 5
+//2:04
 //
