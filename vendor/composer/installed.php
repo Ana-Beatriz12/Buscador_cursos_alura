@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'ana-beatriz12/buscador-cursos',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '5d6193bc78961765bab6fb69febc229bef1382b2',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'ana-beatriz12/buscador-cursos' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '5d6193bc78961765bab6fb69febc229bef1382b2',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -485,9 +485,9 @@
             'dev_requirement' => true,
         ),
         'squizlabs/php_codesniffer' => array(
-            'pretty_version' => '3.13.0',
-            'version' => '3.13.0.0',
-            'reference' => '65ff2489553b83b4597e89c3b8b721487011d186',
+            'pretty_version' => '3.13.1',
+            'version' => '3.13.1.0',
+            'reference' => '1b71b4dd7e7ef651ac749cea67e513c0c832f4bd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),
